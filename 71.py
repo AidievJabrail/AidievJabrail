@@ -7,4 +7,4 @@ for i in range(100, 1000):
     a.sort()
     if str(a[2]) + str(a[1]) + str(a[0]) == '11108':
         print(i)
-        break
+        brea
