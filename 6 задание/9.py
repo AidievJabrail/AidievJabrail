@@ -2,10 +2,10 @@ from turtle import *
 screensize(10000, 10000)
 tracer(0)
 k = 50
-for i in range(15):
-    goto(xcor() + 10 * k, ycor() + 10 * k)
-    goto(xcor() + 3 * k, ycor() - 6 * k)
-    goto(xcor() - 9 * k, ycor() + 3 * k)
+for i in range(7):
+    goto(xcor() + 6 * k, ycor() - 9 * k)
+    goto(xcor() - 6 * k, ycor() + 2 * k)
+    goto(xcor() + 12 * k, ycor() + 3 * k)
 pu()
 for x in range(-30, 30):
     for y in range(-30, 30):
@@ -13,4 +13,4 @@ for x in range(-30, 30):
         dot(4)
 update()
 done()
-print(13 * 15)
+print(7 * 7 + 1)
