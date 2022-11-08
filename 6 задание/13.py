@@ -6,7 +6,7 @@ left(90)
 fd (200 * k)
 for i in range(4 ):
     rt(90)
-    fd(50 * k)
+    fd(100 * k)
 pu()
 for x in range(60):
     for y in range(201):
@@ -14,4 +14,4 @@ for x in range(60):
         dot(3)
 update()
 done()
-print(49 * 49)
+print(99 * 99 + 100 * 5)
