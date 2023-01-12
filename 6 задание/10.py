@@ -1,7 +1,7 @@
 from turtle import *
 screensize(10000, 10000)
 tracer(0)
-k = 50
+k = 10
 for i in range(7):
     goto(xcor() + 6 * k, ycor() - 9 * k)
     goto(xcor() - 6 * k, ycor() + 2 * k)
