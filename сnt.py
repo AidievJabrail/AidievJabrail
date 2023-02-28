@@ -1,27 +1,22 @@
-from itertools import *
+from functools import *
+minn = 1000000000000
 
-k = 0
-gl = 'аиуоия'
-def bo(s1, s2):
-    le = 0
-    ri = 0
-    for i in s1:
-        if i in gl:
-            le += 1
-    for j in s2:
-        if j in gl:
-            ri += 1
-    return abs(ri - le) == 1
+@lru_cache(None)
+def f(u, step, i):
+    a, b = u
+    if a + b >= 95 and step == 2:
+        global minn
+        minn = min(minn, i)
+        return
+    if step == 2:
+        return 0
+    f((a + 1, b), step + 1, i)
+    f((a * 4, b), step + 1, i)
+    f((a, b + 1), step + 1, i)
+    f((a, b * 4), step + 1, i)
+    
+    
 
-st = set()
-
-for i in range(0, 7):
-    for j in product('антиутопия', repeat = i):
-        s1 = ''.join(j)
-        for z in product('антиутопия', repeat = 6 - i):
-            s2 = ''.join(z)
-            if bo(s1, s2):
-                st.add(s1 + s2)
-                k += 1
-print(len(st), k)
-
+for i in range(1, 90):
+    f((5, i), 1, i)
+print(minn)
